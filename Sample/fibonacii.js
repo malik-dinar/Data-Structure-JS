@@ -1,9 +1,17 @@
 function fibonacci(n){
-    const fib=[0,1]
-    for(i=2;i<n;i++){
-        fib[i]=fib[i-1] + fib[i-2];
+    let array=[0,1]
+    for(i=1;i<n;i++){
+        a=array[i]
+        b=array[i-1]
+        c=a+b
+        array.push(c)
     }
-    return fib
-}
 
-console.log(fibonacci(7));
+    // for(i=2;i<n;i++){
+    //     array[i]=array[i-1]+array[i-2]
+    // }
+    return array
+}   
+
+console.log(fibonacci(8));
+//[0,1,1,2,3,5,8]

@@ -62,22 +62,6 @@ class LinkedList{
         this.size--
     }
 
-    delete(value){
-        let temp=this.head;
-        if(temp.value==value){
-            this.deleteBeg()
-        }else{
-            while(temp.next!=null){
-                if(temp.next.value==value){
-                    temp.next=temp.next.next
-                    this.size--
-                }
-                temp=temp.next;
-            }
-        }
-        
-    }
-
     print(){
         if(this.isEmpty()){
             console.log('linked list is empty');
@@ -103,6 +87,4 @@ list.addDataEnd(21)
 list.addDataEnd(2342)
 list.addDataEnd(22)
 list.addDataEnd(254)   
-list.delete(22)
 list.print()
-console.log( 'size of linked list '+list.getSize());

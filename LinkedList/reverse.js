@@ -46,36 +46,16 @@ class LinkedList{
         this.size++
     }
 
-    deleteEnd(){
-        let temp=this.head;
-        let prev
-        while(temp.next!=null){
-            prev=temp;
-            temp=temp.next
+    reverse(){
+        let prev=null;
+        let curr=this.head
+        while(curr != null){
+            let future=curr.next
+            curr.next=prev;
+            prev = curr;
+            curr=future
         }
-        prev.next=null
-        this.size--;
-    }
-
-    deleteBeg(){
-        this.head=this.head.next;
-        this.size--
-    }
-
-    delete(value){
-        let temp=this.head;
-        if(temp.value==value){
-            this.deleteBeg()
-        }else{
-            while(temp.next!=null){
-                if(temp.next.value==value){
-                    temp.next=temp.next.next
-                    this.size--
-                }
-                temp=temp.next;
-            }
-        }
-        
+        this.head=prev;
     }
 
     print(){
@@ -103,6 +83,7 @@ list.addDataEnd(21)
 list.addDataEnd(2342)
 list.addDataEnd(22)
 list.addDataEnd(254)   
-list.delete(22)
 list.print()
-console.log( 'size of linked list '+list.getSize());
+list.reverse()
+list.print()
+
