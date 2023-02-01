@@ -1,4 +1,4 @@
-  class circularQueue{
+class circularQueue{
     constructor(capacity){
         this.items = new Array(capacity);
         this.capacity = capacity;
