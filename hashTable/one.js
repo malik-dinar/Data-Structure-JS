@@ -42,5 +42,3 @@ table.set("name","malik");
 table.set("age",20);
 table.set("name","maliasdfk");
 table.display()
-
-console.log(table.get("name"));

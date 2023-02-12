@@ -10,7 +10,7 @@ const quickSort=(array)=>{
             right.push(array[i])
         }
     }
-    return [...quickSort(left),...quickSort(right),pivot]
+    return [...quickSort(left),pivot,...quickSort(right)]
 }
 console.log(quickSort([2,2345,2345,13,245,35467,7865,234]));
 

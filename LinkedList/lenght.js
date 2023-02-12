@@ -20,7 +20,6 @@ class LinkedList{
     }
 
     addData(value){
-        console.log('1111');
         const node = new Node(value)
         if(this.isEmpty()){
             console.log('1');

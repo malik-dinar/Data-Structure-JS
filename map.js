@@ -4,3 +4,5 @@ map.set('c',3)
 for(const [key,value] of map){
     console.log(`${key}: ${value}`);
 }
+
+console.log(map.keys().next().value);

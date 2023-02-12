@@ -2,7 +2,7 @@ class Queue{
     constructor(){
         this.items=[]
     }
-
+    
     enqueue=element=> this.items.push(element);
     dequeue=()=> this.items.shift();
     isEmpty=()=> this.items.length === 0

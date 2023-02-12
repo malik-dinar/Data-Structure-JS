@@ -7,11 +7,10 @@ function fibonacci(n){
         array.push(c)
     }
 
-    // for(i=2;i<n;i++){
-    //     array[i]=array[i-1]+array[i-2]
-    // }
+    for(i=2;i<n;i++){
+        array[i]=array[i-1]+array[i-2]
+    }
     return array
 }   
 
-console.log(fibonacci(8));
-//[0,1,1,2,3,5,8]
+console.log(fibonacci(9));

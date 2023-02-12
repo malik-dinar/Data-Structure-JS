@@ -1,4 +1,5 @@
 function mergeSort(array){
+    console.log('main array='+array);
     if(array.length<2){
         return array
     }
@@ -9,6 +10,8 @@ function mergeSort(array){
 }
 
 function merge(leftArray,rightArray){
+    console.log('left array='+ leftArray);
+    console.log('right array='+ rightArray);
     sortedArray=[]
     while(leftArray.length && rightArray.length){
         if(leftArray[0]<=rightArray[0]){
