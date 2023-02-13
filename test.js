@@ -1,57 +1,28 @@
-class Node{
-    constructor(value){
-        this.value = value;
-        this.next = null;
-    }
-
-}
-
-class Linkedlist{
+class Graph{adjecencyList
     constructor(){
-        this.head = null;
-        this.size =0;
-    }
-    isEmpty=()=> this.size == 0;
-
-    push=(value)=>{
-        const node = new Node(value)
-        if(this.isEmpty()){
-            this.head = node;
-            this.size++;
-        }else{
-            let prev = this.head;
-            while(prev.next!== null){
-                prev = prev.next;
-                this.size++;
-            }
-            prev.next = node;
-        }
-    }
-    peek=()=>{
-        this.head
-    } 
-
-    pop=()=>{
-        let item=this.head
-        this.head.next = this.head;
-        return item
+        this.adjacencyList = {}
     }
 
+    addVertex(vertex){
+        this.adjecencyList[vertex] = [];
+    }
 
-    print=()=>{
-        let prev= this.head;
-        while(prev.next!==null){
-            console.log(prev);
-            prev=prev.next;
-        }
+    addEdge(vertex1,vertex2){
+        this.adjecencyList[vertex1].push(vertex2);
+        this.adjecencyList[vertex2].push(vertex1);
+    }
+
+    removeEdge(vertex1,vertex2){
+        this.adjecencyList[vertex1] = this.adjecencyList[vertex1].filter(vertex=> vertex !==vertex2 )
+        this.adjecencyList[vertex2] = this.adjecencyList[vertex2].filter(vertex=> vertex !==vertex2 )
     }
 }
 
-const list = new Linkedlist();
-list.push(5);
-list.push(34)
-list.print();
-list.pop()
-list.print()
-
-
+const g = new Graph()
+g.addVertex('tokyo');
+g.addVertex('ireland');
+g.addVertex('kochi');
+g.addEdge('tokyo','kochi');
+g.addEdge('tokyo','ireland');
+g.removeEdge('tokyo','ireland')
+console.log(g.adjecencyList);
