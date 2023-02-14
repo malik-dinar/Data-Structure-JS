@@ -6,7 +6,6 @@ class Graph{
     addVertex(vertex){
         this.adjacencyList[vertex] = [];
     }
-
     removeVertext(vertex){
         while(this.adjacencyList.length){
             const adjacentVertex = this.adjacencyList.pop();
@@ -19,11 +18,29 @@ class Graph{
         this.adjacencyList[vertex1].push(vertex2);
         this.adjacencyList[vertex2].push(vertex1);
     }
-
     removeEdge(vertex1,vertex2){
         this.adjacencyList[vertex1] = this.adjacencyList[vertex1].filter(vertex=> vertex !==vertex2 )
         this.adjacencyList[vertex2] = this.adjacencyList[vertex2].filter(vertex=> vertex !==vertex1 )
     }
+
+    depthFirstRecursive(start){
+        const result=[];
+        const visited={};
+        let adjacencyList=this.adjacencyList;
+
+        (function dfs(vertex){
+            if(!vertex) return null;
+            result.push(vertex);
+            visited[vertex] = true;
+            adjacencyList[vertex].forEach(neighbour => {
+                if(!visited[neighbour]){
+                    return dfs(neighbour)
+                }
+            });
+        })(start)
+        return result;
+    }
+    
 }
 
 const g = new Graph()
@@ -41,7 +58,7 @@ g.addEdge("C","E");
 g.addEdge("D","E");
 g.addEdge("D","F");
 g.addEdge("E","F");
-    
+console.log(g.depthFirstRecursive('A'));
 
 
 console.log(g.adjacencyList);
