@@ -40,7 +40,6 @@ class Graph{
         })(start)
         return result;
     }
-    
 }
 
 const g = new Graph()
@@ -49,7 +48,7 @@ g.addVertex('B');
 g.addVertex('C');
 g.addVertex('D');
 g.addVertex('E');
-g.addVertex('F');
+g.addVertex('F');v
 
 g.addEdge("A","B");
 g.addEdge("A","C");
