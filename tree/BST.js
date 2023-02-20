@@ -3,7 +3,7 @@ class Node{
         this.value = value;
         this.right = null;
         this.left = null;
-    }
+         }
 }
 
 class BinarySearchTree{
@@ -56,7 +56,6 @@ class BinarySearchTree{
         if(!found) return false;
         return current;
     }
-    
 }
 
 const tree = new BinarySearchTree()
