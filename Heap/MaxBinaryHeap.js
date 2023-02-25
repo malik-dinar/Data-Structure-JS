@@ -20,6 +20,25 @@ class MaxBinaryHeap{
         }
     }
 
+
+
+
+
+    bubbleUp(){
+        const index=this.values.length-1;
+        const element=this.values[index];
+        while(index>0){
+            let parentIndex=Math.floor((index-1)/2);
+            let parent=this.values[parentIndex];
+            if(element=>parent){
+                [this.values[parentIndex],this.values[index]]=[element,parent]
+                index=parentIndex;
+            }else{
+                break;
+            }
+        }
+    }
+
     print(){
         console.log(this.values);
     }

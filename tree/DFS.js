@@ -70,6 +70,16 @@ class BinarySearchTree{
         return visited;
     }
     
+    dfs(){
+        let visited=[];
+        (function traverse(){
+            if(node.left) traverse(node.left)
+            if(node.right) traverse(node.right);
+            visited.push(node.value)
+        })(this.root)
+        return visited
+    }
+
 }
 
 const tree = new BinarySearchTree()

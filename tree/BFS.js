@@ -70,6 +70,20 @@ class BinarySearchTree{
         }
         return visited;
     }
+
+
+    bfs(){
+        let node=this.root;
+        let queue=[];
+        let visited=[];
+        queue.push(node)
+        while(queue.length){
+            node = queue.shift();
+            visited.push(node.value)
+            if(node.left) queue.push(node.left);
+            if(node.right) queue.push(node.right);
+        }
+    }
     
 }
 
