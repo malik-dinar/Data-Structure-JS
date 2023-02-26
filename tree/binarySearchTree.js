@@ -95,8 +95,8 @@ class BinarySearchTree{
         return array;
     }
 
-    minNode(){
-        let current=this.root
+    minNode(root=this.root){
+        let current=root;
         if(current.left===null) return current.value;
         while(current.left!=null){
             current=current.left;
@@ -119,7 +119,6 @@ class BinarySearchTree{
     deleteNode(root, value){
         if(root === null) return root
         if(value < root.value){
-            console.log(root.value);
             root.left = this.deleteNode(root.left, value);
         }else  if(value > root.value){
             root.right = this.deleteNode(root.right, value);
@@ -132,8 +131,9 @@ class BinarySearchTree{
                 }else if(!root.right){
                     return root.left;
                 }
+
             root.value = this.minNode(root.right);
-            root.right =this.deleteNode(root.right, root.value)
+            root.right = this.deleteNode(root.right, root.value)
         }
     }
 }

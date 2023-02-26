@@ -8,8 +8,8 @@ class Graph{
     }
 
     removeVertext(vertex){
-        while(this.adjacencyList.length){
-            const adjacentVertex = this.adjacencyList.pop();
+        while(this.adjacencyList[vertex].length){
+            const adjacentVertex = this.adjacencyList[vertex].pop();    
             this.removeEdge(vertex, adjacentVertex);
         }
         delete this.adjacencyList[vertex]
@@ -21,7 +21,7 @@ class Graph{
     }
 
     removeEdge(vertex1,vertex2){
-        this.adjacencyList[vertex1] = this.adjacencyList[vertex1].filter(vertex=> vertex !==vertex2 )
+        this.adjacencyList[vertex1] = this.adjacencyList[vertex1].filter(vertex=> vertex !==vertex2 )   
         this.adjacencyList[vertex2] = this.adjacencyList[vertex2].filter(vertex=> vertex !==vertex1 )
     }
 }
@@ -34,4 +34,4 @@ g.addEdge('tokyo','kochi');
 g.addEdge('tokyo','ireland');
 g.removeEdge('tokyo','ireland')
 g.removeVertext('tokyo')
-console.log(g.adjacencyList);
+//console.log(g.adjacencyList);

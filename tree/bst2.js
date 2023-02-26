@@ -12,17 +12,17 @@ class BinarySearchTree{
     }
 
     insert(value){
-        const newNode=new Node(value);
-        let current=this.root
-        if(current===null){
-            current=newNode;
+        const newNode=new Node(value);    
+        if(this.root===null){
+            this.root=newNode;
         }else{
+            let current=this.root
             while(true){
                 if(value<current.value){
                     if(current.left===null){
                         current.left=newNode;
                         return this;
-                    }
+                    }   
                     current=current.left;
                 }else if(value>current.value){
                     if(current.right===null){
@@ -52,8 +52,110 @@ class BinarySearchTree{
         if(!found) return false;
         return current;
     }
+
+    min(root=this.root){
+        let current=root;
+        if(current===null) return undefined;
+        while(true){
+            if(current.left===null){
+                return current;
+            }
+            current=current.next;
+        }
+    }
+
+    max(){
+        let current = this.root;
+        if(current===null) return undefined;
+        while(true){
+            if(current.right===null){
+                return current
+            }
+            current=current.right;
+        }
+    }
+
+    postOrder(){
+        (function traverse(node){
+            if(node!==null){
+                traverse(node.left);
+                traverse(node.right);
+                console.log(node.value);
+            }
+        })(this.root)
+    }
+   
+    getHeight(root=this.root){
+        if(root===null) return 0;
+        let leftHeight= this.getHeight(root.left);
+        let rightHeight = this.getHeight(root.right);
+        return Math.max(leftHeight,rightHeight)+1;
+    }
+
+    preOrder(){
+        (function traverse(node){
+            if(node!=null){
+                console.log(root.value);
+                traverse(root.left);
+                traverse(root.right);
+            }
+        })(this.root)
+    }
+    postOrder(){
+        (function traverse(node){
+            if(node!=null){
+                traverse(node.left);
+                traverse(node.right);
+                console.log(node.value);
+            }
+        })(this.root)
+    }
+
+    bfs(){
+        let node=this.root;
+        let visited=[];
+        let queue=[];
+        queue.push(node)
+        while(queue.length){
+            node = queue.shift();
+            visited.push(node.value)
+            if(node.left) queue.push(node.left);
+            if(node.right) queue.push(node.right);
+        }
+    }
+
+    delete(value){
+        this.root= this.deleteNode(this.root,value)
+    }
+
+    deleteNode(root,value){
+        if(root === null) return null;
+        if(value > root.value){
+            root.right=this.deleteNode(root.right,value)
+        }else if(value<root.value){
+            root.left=this.deleteNode(root.left,value)
+        }else{
+            if(!root.left && !root.right) return null;
+
+            if(!root.left) return root.right;
+            else if(!root.right) return root.left;
+
+            root.value=this.min(root.right);
+            root.right=this.deleteNode(root.right,root.value)
+        }
+    }
 }
 
+
+
 const tree=new BinarySearchTree();
-tree.insert(40);
-console.log(tree.search(40));
+tree.insert(10);
+tree.insert(5)
+tree.insert(13)
+tree.insert(11)
+tree.insert(2)
+tree.insert(16)
+tree.insert(7)
+tree.insert(1)
+console.log(tree.getHeight());
+// console.log(tree.search(16));
