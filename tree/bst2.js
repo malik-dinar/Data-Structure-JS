@@ -55,7 +55,7 @@ class BinarySearchTree{
 
     min(root=this.root){
         let current=root;
-        if(current===null) return undefined;
+        if(current===null) return null;
         while(true){
             if(current.left===null){
                 return current;
@@ -66,7 +66,7 @@ class BinarySearchTree{
 
     max(){
         let current = this.root;
-        if(current===null) return undefined;
+        if(current===null) return null;
         while(true){
             if(current.right===null){
                 return current
@@ -142,6 +142,66 @@ class BinarySearchTree{
 
             root.value=this.min(root.right);
             root.right=this.deleteNode(root.right,root.value)
+        }
+    }
+
+
+
+    delete2(value){
+        this.root = this.deleteNode2(this.root,value)
+    }
+
+    deleteNode2(root,value){
+        if(root===null) return null;
+        if(value>root){
+            root.right= this.deleteNode2(root.right,value)
+        }else if(value<root){
+            root.left= this.deleteNode2(root.left,value)
+        }else{
+            if(!root.left && !root.right) return null;
+            
+            if(!root.left){
+                return root.right;
+            }else if(!root.right){
+                return root.left;
+            }
+
+            root.value=this.min(root.right);
+            root.right=this.deleteNode2(root.right,root.value)
+
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+    delete3(){
+        this.root=this.deleteNode3(this.root,value);
+    }
+
+    deleteNode3(root,value){
+        if(value>root.value){
+            root.right=this.deleteNode3(root.right,value)
+        }else if(value<root.value){
+            root.left=this.deleteNode3(root.left,value)
+        }else{
+            if(!root.left && !root.right) return null;
+
+            if(!root.left){
+                return root.left
+            }else if(!root.right){
+                return root.right
+            }
+
+            root.value = this.min(root.right);
+            root.right = this.deleteNode3(root.right,root.value)
         }
     }
 }

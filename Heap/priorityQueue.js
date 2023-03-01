@@ -6,7 +6,7 @@ class priorityQueue{
     enqueue(val, priority){
         const newNode = new Node(val, priority)
         this.values.push(newNode);
-        this.bubbleUp();
+        this.bubbleUp();    
     }
     bubbleUp(){
         let index = this.values.length-1;
