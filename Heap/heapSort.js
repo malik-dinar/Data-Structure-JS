@@ -32,7 +32,6 @@ function heapify(array,i,length){
         
         heapify(array,largest,length)
     }
-
 }
 
 heapSort([30,23,12,34,211]);

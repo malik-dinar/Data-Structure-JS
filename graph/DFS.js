@@ -15,7 +15,7 @@ class Graph{
     }
 
     addEdge(vertex1,vertex2){
-        this.adjacencyList[vertex1].push(vertex2);
+        this.adjacencyList[vertex1].push(vertex2);  
         this.adjacencyList[vertex2].push(vertex1);
     }
     removeEdge(vertex1,vertex2){
@@ -29,7 +29,7 @@ class Graph{
         let adjacencyList=this.adjacencyList;
 
         (function dfs(vertex){
-            if(!vertex) return null;
+            if(!vertex) return null; 
             result.push(vertex);
             visited[vertex] = true;
             adjacencyList[vertex].forEach(neighbour => {
@@ -48,7 +48,7 @@ g.addVertex('B');
 g.addVertex('C');
 g.addVertex('D');
 g.addVertex('E');
-g.addVertex('F');v
+g.addVertex('F');
 
 g.addEdge("A","B");
 g.addEdge("A","C");
@@ -57,7 +57,10 @@ g.addEdge("C","E");
 g.addEdge("D","E");
 g.addEdge("D","F");
 g.addEdge("E","F");
-console.log(g.depthFirstRecursive('A'));
-
-
+g.removeEdge("E","F")
 console.log(g.adjacencyList);
+//console.log('looking fiy');
+//console.log(g.depthFirstRecursive('A'));
+
+
+//console.log(g.adjacencyList);

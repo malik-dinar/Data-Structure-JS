@@ -95,6 +95,20 @@ class BinarySearchTree{
         return array;
     }
 
+    checkBST2(root){
+        if(!root || !root.left && !root.right){
+            return true;
+        }
+
+        if(root.left && root.left>=root.value){
+            return false;
+        }
+        if(root.right && root.right<=root.value){
+            return false;
+        }
+        return this.checkBST2(root.left) && this.checkBST2(root.right)
+    }
+
     minNode(root=this.root){
         let current=root;
         if(current.left===null) return current.value;
@@ -135,6 +149,58 @@ class BinarySearchTree{
             root.value = this.minNode(root.right);
             root.right = this.deleteNode(root.right, root.value)
         }
+    }
+
+
+    delete(value){
+        this.root=this.deleteNode2(this.root,value);
+    }
+    deleteNode2(root,value){
+        if(root===null) return true;
+        if(root.value>value){
+            root.left=this.deleteNode2(root.left,value);
+        }else if(root.value<value){
+            root.right=this.deleteNode2(root.right,value);
+        }else{
+            if(!root.left && !root.right){
+                return null;
+            }
+
+            if(!root.left){
+                return root.right;
+            }else if(!root.right){
+                return root.left;
+            }
+
+            root.value=this.minNode(root.right);
+            root.right=this.deleteNode2(root.right,root.value)
+        }
+    }
+
+
+    inOrder() {
+        (function traverse(node){
+            if(node!==null){
+                traverse(node.left);
+                traverse(node.right)
+                console.log(node.value);
+            }
+        })(this.root)
+    }
+
+    che(root){
+        if(!root || !root.left && !root.right){
+            return true
+        }
+
+        if(root.left && root.value<root.left){
+            return false;
+        }
+        if(root.right && root.value>root.right){
+            return false
+        }
+
+        return che(root.left) && cher(root.right)
     }
 }
 
