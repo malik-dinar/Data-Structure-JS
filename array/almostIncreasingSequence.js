@@ -1,6 +1,6 @@
 function solution(sequence) {
     k=0
-    for(i=0;i<sequence.length;i++){
+    while(sequence.length){
         sol=true;
         array=[...sequence]; 
         array.splice(k,1)

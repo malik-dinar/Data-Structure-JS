@@ -7,8 +7,12 @@ class HashTable{
     hash(key){
         let total=0;
         for(let i=0; i<key.length;i++){
+            console.log(key.charCodeAt(i));
+            console.log(total+"="+total+key.charCodeAt(i));
             total += key.charCodeAt(i)
         }
+        console.log(total+"-"+this.size);
+        console.log(total % this.size);
         return total % this.size
     }
 
