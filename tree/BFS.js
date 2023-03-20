@@ -49,7 +49,6 @@ class BinarySearchTree{
             }else if(value > current.value){
                 current = current.right;
             }else{
-                console.log('found');
                 found = true;
             }
         }
