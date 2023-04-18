@@ -1,4 +1,4 @@
-var differenceOfSum = function (nums) {
+const differenceOfSum = function (nums) {
     let sum1 =0;
     let sum2=0
   
