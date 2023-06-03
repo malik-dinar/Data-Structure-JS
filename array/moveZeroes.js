@@ -1,4 +1,4 @@
-var moveZeroes = function(nums) {
+const moveZeroes = function(nums) {
     let count=nums.length;
     let count2=0;
     for(let i=0;i<nums.length;i++){
