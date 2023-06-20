@@ -27,7 +27,7 @@ class LinkedList{
             this.head= node
         }else{
             node.next = this.head
-            this.head= node
+            this.head = node
         }
         this.size++
     }
