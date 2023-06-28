@@ -40,7 +40,7 @@ class BinarySearchTree{
         (function traverse(node){
             if(node!==null){
                 console.log(node.value);
-                traverse(node.left)
+                traverse(node.left) 
                 traverse(node.right)
             }
         })(this.root)
@@ -50,8 +50,8 @@ class BinarySearchTree{
         (function traverse(node){
             if(node!==null){
                 traverse(node.left);
-                traverse(node.right);
                 console.log(node.value);
+                traverse(node.right);
             }
         })(this.root)
     }
@@ -126,6 +126,8 @@ class BinarySearchTree{
         }
         return current.value;
     }
+
+
 
     delete(value){
         this.root = this.deleteNode(this.root, value);
@@ -202,6 +204,14 @@ class BinarySearchTree{
 
         return che(root.left) && cher(root.right)
     }
+
+    depth(){
+        (function maxDepth(node) {
+            if (!node) { return 0 }
+            else return Math.max(maxDepth(node.left), maxDepth(node.right)) + 1
+        })(this.root)
+    }
+    
 }
 
 const tree = new BinarySearchTree()
@@ -212,11 +222,9 @@ tree.insert(11)
 tree.insert(2)
 tree.insert(16)
 tree.insert(7)
-tree.postOrder()
-console.log(tree.minNode());
-console.log('delete NOde');
-tree.delete(2);
-
-
-
+// tree.postOrder()
+// console.log(tree.minNode());
+// console.log('delete NOde');
+// tree.delete(2);
+console.log(tree.depth());
 
