@@ -87,8 +87,9 @@ class BinarySearchTree{
         (function traverse(node){
             if(node!==null){
                 traverse(node.left);
-                traverse(node.right);
                 array.push(node.value);
+                traverse(node.right);e
+
             }
         })(this.root)
         // if array is sorted then it is a binary search tree.
@@ -182,7 +183,7 @@ class BinarySearchTree{
 
     inOrder() {
         (function traverse(node){
-            if(node!==null){
+            if(node!==null){  
                 traverse(node.left);
                 traverse(node.right)
                 console.log(node.value);

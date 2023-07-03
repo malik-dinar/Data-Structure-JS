@@ -30,7 +30,7 @@ class MaxBinaryHeap{
             parentElement = this.values[parentIndex];
             if(element>parentElement){
                 temp = element;
-                element = parentElement;
+                element = parentElement;    
                 parentElement = temp;
             }
         }

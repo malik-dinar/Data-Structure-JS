@@ -5,10 +5,11 @@ function insertionSort(array){
                 temp=array[i];
                 array[i]=array[j];
                 array[j]=temp
+                i--;
             }
         }
     }
     return array
 }
 
-console.log(insertionSort([2,3,5,6,21,2234,112]));
+console.log(insertionSort([5,2,3,1]));

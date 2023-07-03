@@ -3,7 +3,7 @@ class Node{
         this.value = value;
         this.right = null;
         this.left = null;
-         }
+    }
 }
 
 class BinarySearchTree{

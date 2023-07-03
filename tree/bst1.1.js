@@ -118,14 +118,7 @@ class BinarySearchTree {
                 console.log(node.value);
         })(this.root)
     }
-
-
-
     
-
-
-
-
     Inorder(){
         (function traverse(node){
             if(node.left) traverse(node.left)

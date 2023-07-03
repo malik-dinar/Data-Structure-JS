@@ -40,13 +40,6 @@ class MaxBinaryHeap{
         }
     }
 
-
-
-
-
-
-
-
     extractMax(){
         const end=this.values.pop();
         let max=this.values[0];

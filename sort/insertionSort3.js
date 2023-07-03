@@ -5,6 +5,7 @@ function insertionSort(array){
                 temp=array[i];
                 array[i]=array[j];
                 array[j]=temp
+                i--;
             }
         }
     }
