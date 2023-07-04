@@ -18,7 +18,6 @@ function heapify(array,i,length){
     let leftChild=2*i +1;
     let rightChild=2*i +2;
     let largest=i
-
     if(leftChild<length && array[leftChild]>array[largest]){
         largest=leftChild;
     }
