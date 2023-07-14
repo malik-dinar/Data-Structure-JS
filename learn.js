@@ -13,3 +13,7 @@ const b=()=>{
 }
 
 b()
+
+
+
+console.log('hiiiiiiii')
