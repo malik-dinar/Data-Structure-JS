@@ -36,8 +36,14 @@
 
 let array = [1,2,30,4,5,6,7,8,9,10]
 
-const sum1 = array.reduce((acc,curr)=>{
-    return acc + curr
+// const sum1 = array.reduce((acc,curr)=>{
+//     return acc + curr
+// })
+
+// console.log(sum1);
+
+const hi = array.map((val)=>{
+    return val*2
 })
 
-console.log(sum1);
+console.log(hi);
