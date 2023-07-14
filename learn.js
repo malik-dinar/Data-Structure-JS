@@ -46,4 +46,4 @@ const hi = array.map((val)=>{
     return val*2
 })
 
-console.log(hi);
+b()
