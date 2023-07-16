@@ -11,5 +11,4 @@ function insertionSort(array){
     }
     return array
 }
-
 console.log(insertionSort([5,2,3,1]));
