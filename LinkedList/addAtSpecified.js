@@ -93,3 +93,22 @@ list.addDataEnd(254)
 list.addAtSpecified(2,3) 
 list.addAtSpecified(3,4) 
 list.print()
+
+
+
+
+
+
+class Node2{
+    constructor(node){
+        this.value = null;
+        this.next  = null;
+    }
+}
+
+class LinkedList2{
+    constructor(){
+        this.head = null;
+        this.size = 0;
+    }
+}
