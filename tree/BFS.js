@@ -83,6 +83,18 @@ class BinarySearchTree{
             if(node.right) queue.push(node.right);
         }
     }
+
+
+    bfs3(){
+        let node =this.root;
+        let queue = []
+        let visited = []
+        while(queue.length){
+            visited.push(node);
+            queue.push(node.left);
+            queue.push(node.right)
+        }
+    }
     
 }
 

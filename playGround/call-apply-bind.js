@@ -1,3 +1,13 @@
+// At a very high level, call and apply execute a function immediately. Bind returns a new function.
+
+// Call and apply are very similar in that they allow you to invoke a function. The difference is that call takes arguments one by one, apply takes in arguments as an array.
+
+// Remember A for apply, A for array. Consider the following examples.
+
+
+
+
+
 var john = {
     favoriteFood: 'pizza'
   }
